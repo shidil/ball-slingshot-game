@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level name="1" minx="9999999" miny="9999999" maxx="-9999999" maxy="-9999999" bgColor = "0xff000000" >
+	<layer name="background" xScroll="1.000" yScroll="1.000" >
+		<sprite class="Avatar" name="background" x="1.00" y="1.00" angle="0.00" flip="false" xScale="1.00" yScale="1.00" />
+	</layer>
+	<layer name="shapes" xScroll="1.000" yScroll="1.000" >
+		<shape type="box" x="123.00" y="151.00" angle="0.00" wid="50.00" ht="50.00" />
+	</layer>
+	<layer name="charactors" xScroll="1.000" yScroll="1.000" >
+		<sprite class="Avatar" name="" x="75.00" y="373.00" angle="0.00" flip="false" xScale="1.00" yScale="1.00" />
+		<sprite class="Avatar" name="" x="200.00" y="364.00" angle="0.00" flip="false" xScale="1.00" yScale="1.00" />
+		<sprite class="Avatar" name="" x="304.00" y="359.00" angle="0.00" flip="false" xScale="1.00" yScale="1.00" />
+		<sprite class="Avatar" name="" x="426.00" y="352.00" angle="0.00" flip="false" xScale="1.00" yScale="1.00" />
+	</layer>
+</level>

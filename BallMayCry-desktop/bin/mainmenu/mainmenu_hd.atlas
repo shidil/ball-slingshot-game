@@ -1,0 +1,40 @@
+
+mainmenu_hd.png
+format: RGBA8888
+filter: MipMap,Linear
+repeat: none
+background
+  rotate: false
+  xy: 2, 230
+  size: 1280, 720
+  orig: 1280, 720
+  offset: 0, 0
+  index: -1
+title
+  rotate: false
+  xy: 2, 86
+  size: 798, 140
+  orig: 798, 140
+  offset: 0, 0
+  index: -1
+play
+  rotate: false
+  xy: 1286, 850
+  size: 200, 100
+  orig: 200, 100
+  offset: 0, 0
+  index: -1
+sound_disabled
+  rotate: false
+  xy: 2, 2
+  size: 120, 80
+  orig: 120, 80
+  offset: 0, 0
+  index: -1
+sound_enabled
+  rotate: false
+  xy: 804, 146
+  size: 120, 80
+  orig: 120, 80
+  offset: 0, 0
+  index: -1

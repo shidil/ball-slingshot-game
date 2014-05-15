@@ -1,0 +1,40 @@
+
+mainmenu.png
+format: RGBA8888
+filter: MipMap,Linear
+repeat: none
+background
+  rotate: false
+  xy: 2, 115
+  size: 640, 360
+  orig: 640, 360
+  offset: 0, 0
+  index: -1
+title
+  rotate: false
+  xy: 2, 43
+  size: 399, 70
+  orig: 399, 70
+  offset: 0, 0
+  index: -1
+play
+  rotate: false
+  xy: 646, 425
+  size: 100, 50
+  orig: 100, 50
+  offset: 0, 0
+  index: -1
+sound_disabled
+  rotate: false
+  xy: 2, 1
+  size: 60, 40
+  orig: 60, 40
+  offset: 0, 0
+  index: -1
+sound_enabled
+  rotate: false
+  xy: 405, 73
+  size: 60, 40
+  orig: 60, 40
+  offset: 0, 0
+  index: -1

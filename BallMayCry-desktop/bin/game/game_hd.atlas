@@ -1,0 +1,103 @@
+
+game_hd.png
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+disc
+  rotate: false
+  xy: 2, 149
+  size: 808, 808
+  orig: 808, 808
+  offset: 0, 0
+  index: -1
+ring_victory
+  rotate: false
+  xy: 2, 25
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+ring
+  rotate: false
+  xy: 814, 841
+  size: 116, 116
+  orig: 116, 116
+  offset: 0, 0
+  index: -1
+ball
+  rotate: false
+  xy: 126, 42
+  size: 104, 103
+  orig: 104, 103
+  offset: 0, 0
+  index: -1
+loading
+  rotate: false
+  xy: 2, 7
+  size: 70, 14
+  orig: 70, 14
+  offset: 0, 0
+  index: -1
+ball_trace
+  rotate: false
+  xy: 814, 797
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+origin
+  rotate: false
+  xy: 934, 929
+  size: 28, 28
+  orig: 28, 28
+  offset: 0, 0
+  index: -1
+trace
+  rotate: false
+  xy: 126, 33
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+box_bg
+  rotate: false
+  xy: 234, 142
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+bg
+  rotate: false
+  xy: 2, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+box
+  rotate: false
+  xy: 76, 20
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+pattern
+  rotate: false
+  xy: 814, 792
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+pixel
+  rotate: false
+  xy: 858, 836
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 934, 924
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level name="The Big O" >
+	<layer name="background">
+		<background class="background" name="background" />
+	</layer>
+	<layer name="objects">
+		<sprite class="disc_object" name="disc" x="380.00" y="80.00" angle="0.00" flip="false" width="320.00" height="320.00" />
+		<sprite class="hero_object" name="hero" x="100.00" y="100.00" angle="0.00" flip="false" width="1.00" height="1.00" />
+		<sprite class="target_object" name="target" x="395.00" y="335.00" angle="0.00" flip="false" width="1.00" height="1.00" />
+	</layer>
+</level>
