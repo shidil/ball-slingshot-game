@@ -27,6 +27,7 @@ public class GlobalSettings {
 	}
 	public static void toggleSound() {
 		prefs.putBoolean(PREF_SOUND, !isSoundEnabled());
+		prefs.flush();
 		WorldListner.startMusic();
 		
 	}
