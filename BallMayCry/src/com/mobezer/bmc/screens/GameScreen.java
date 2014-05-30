@@ -12,16 +12,8 @@ import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.FPSLogger;
-import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Pixmap.Blending;
-import com.badlogic.gdx.graphics.Pixmap.Filter;
-import com.badlogic.gdx.graphics.Pixmap.Format;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.Texture.TextureFilter;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.input.GestureDetector;
@@ -260,9 +252,6 @@ public class GameScreen extends BaseScreen implements InputProcessor,
 		cam.update();
 		Gdx.gl.glClearColor(0f, 0f, 0f, 0f);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		Gdx.gl.glEnable(GL10.GL_SMOOTH);
-		Gdx.gl.glEnable(GL10.GL_LINE_SMOOTH);
-		Gdx.gl.glHint(GL10.GL_LINE_SMOOTH_HINT, GL10.GL_LINE_SMOOTH);
 		batch.setProjectionMatrix(cam.combined);
 		batch.begin();
 		batch.disableBlending();
@@ -292,8 +281,6 @@ public class GameScreen extends BaseScreen implements InputProcessor,
 	private void drawLine(float X1, float Y1, float X2, float Y2) {
 
 		batch.end();
-		Gdx.gl.glEnable(GL10.GL_SMOOTH);
-		Gdx.gl.glEnable(GL10.GL_LINE_SMOOTH);
 		shapeRenderer.setProjectionMatrix(GameWorld.camera.combined);
 		shapeRenderer.begin(ShapeType.Line);
 		shapeRenderer.setColor(Color.GRAY);

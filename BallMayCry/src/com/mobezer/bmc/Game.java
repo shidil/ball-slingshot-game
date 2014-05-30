@@ -20,6 +20,7 @@ public class Game implements ApplicationListener {
 
 	public static final String LOG = Game.class.getSimpleName();
 	// a libgdx helper class that logs the current FPS each second
+	@SuppressWarnings("unused")
 	private FPSLogger fpsLogger;
 	public AssetManager manager = new AssetManager();
 	public static TweenManager tweenManager;

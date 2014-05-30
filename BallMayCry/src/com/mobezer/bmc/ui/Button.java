@@ -42,10 +42,19 @@ public class Button extends Widget {
 	}
 	@Override
 	public Boolean IsInside(float tapx, float tapy) {
-		float px =  (BackTexture.Position.x - BackTexture.GetWidth() / 2);
-		float py =  (BackTexture.Position.y - BackTexture.GetHeight() / 2);
-		float width =  (BackTexture.Position.x + BackTexture.GetWidth() / 2);
-		float height =  (BackTexture.Position.y + BackTexture.GetHeight() / 2);
+		float px=0,py=0,width=0,height=0;
+		if (BackTexture != null){
+		px =  (BackTexture.Position.x - BackTexture.GetWidth() / 2);
+		py =  (BackTexture.Position.y - BackTexture.GetHeight() / 2);
+		width =  (BackTexture.Position.x + BackTexture.GetWidth() / 2);
+		height =  (BackTexture.Position.y + BackTexture.GetHeight() / 2);
+		}
+		else if(Text!=null){	
+			px =  (Text.Position.x - Text.GetWidth() / 2);
+			py =  (Text.Position.y - Text.GetHeight() / 1);
+			width =  (Text.Position.x + Text.GetWidth() / 2);
+			height =  (Text.Position.y + Text.GetHeight() / 2);
+		}
 		if (tapx >= px && tapx <= (/*px +*/ width) && tapy >= py && tapy <= (/*py + */height))
 			return true;
 		return false;

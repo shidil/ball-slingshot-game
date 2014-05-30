@@ -4,7 +4,7 @@
 		<background class="background" name="background"/>
 	</layer>
 	<layer name="objects">
-		<sprite class="hero_object" name="hero" x="110.00" y="110.00" angle="0.00" flip="false" width="1.00" height="1.00" />
-		<sprite class="target_object" name="target" x="540.00" y="215.00" angle="0.00" flip="false" width="1.00" height="1.00" />
+		<sprite class="hero_object" name="hero" x="180.00" y="220.00" angle="0.00" flip="false" width="1.00" height="1.00" />
+		<sprite class="target_object" name="target" x="650.00" y="300.00" angle="0.00" flip="false" width="1.00" height="1.00" />
 	</layer>
 </level>

@@ -5,98 +5,98 @@ filter: MipMapLinearLinear,Linear
 repeat: none
 disc
   rotate: false
-  xy: 2, 149
+  xy: 2, 210
   size: 808, 808
   orig: 808, 808
   offset: 0, 0
   index: -1
 ring_victory
   rotate: false
-  xy: 2, 25
+  xy: 2, 86
   size: 120, 120
   orig: 120, 120
   offset: 0, 0
   index: -1
 ring
   rotate: false
-  xy: 814, 841
+  xy: 814, 902
   size: 116, 116
   orig: 116, 116
   offset: 0, 0
   index: -1
 ball
   rotate: false
-  xy: 126, 42
+  xy: 126, 103
   size: 104, 103
   orig: 104, 103
   offset: 0, 0
   index: -1
+ball_trace
+  rotate: false
+  xy: 2, 2
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
 loading
   rotate: false
-  xy: 2, 7
+  xy: 814, 884
   size: 70, 14
   orig: 70, 14
   offset: 0, 0
   index: -1
-ball_trace
-  rotate: false
-  xy: 814, 797
-  size: 40, 40
-  orig: 40, 40
-  offset: 0, 0
-  index: -1
 origin
   rotate: false
-  xy: 934, 929
+  xy: 934, 990
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 trace
   rotate: false
-  xy: 126, 33
+  xy: 126, 94
   size: 5, 5
   orig: 5, 5
   offset: 0, 0
   index: -1
 box_bg
   rotate: false
-  xy: 234, 142
+  xy: 234, 203
   size: 3, 3
   orig: 3, 3
   offset: 0, 0
   index: -1
 bg
   rotate: false
-  xy: 2, 2
+  xy: 86, 81
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 box
   rotate: false
-  xy: 76, 20
+  xy: 814, 879
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 pattern
   rotate: false
-  xy: 814, 792
+  xy: 888, 897
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 pixel
   rotate: false
-  xy: 858, 836
+  xy: 934, 985
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 white
   rotate: false
-  xy: 934, 924
+  xy: 966, 1017
   size: 1, 1
   orig: 1, 1
   offset: 0, 0

@@ -90,9 +90,9 @@ public class MainMenu extends BaseScreen implements InputProcessor{
 				dispose();
 			}
 		});	
-		final TextureWrapper soundTexture = new TextureWrapper(GlobalSettings.isSoundEnabled()?Assets.soundEnabled:Assets.soundDisabled,new Vector2(320, 120));
+		final TextureWrapper soundTexture = new TextureWrapper(GlobalSettings.isSoundEnabled()?Assets.soundEnabled:Assets.soundDisabled,new Vector2(400, 180));
 		soundTexture.SetDimension(60, 40);
-		Button sound=new Button(soundTexture, soundTexture, null, new Vector2(360, 120));
+		Button sound=new Button(soundTexture, soundTexture, null, new Vector2(400, 180));
 		sound.setOnTapListner(new TouchListner() {
 			@Override
 			public void tap() {
@@ -146,7 +146,7 @@ public class MainMenu extends BaseScreen implements InputProcessor{
 		if (keycode == Keys.BACK || keycode == Keys.ESCAPE) {
 			BackScreenID=Game.EXIT;
 			IsDone=true;
-			//System.exit(0);
+			System.exit(0);
 			return true;
 		}
 		return false;

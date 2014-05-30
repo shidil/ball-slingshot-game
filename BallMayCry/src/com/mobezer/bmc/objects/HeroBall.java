@@ -22,8 +22,8 @@ public class HeroBall extends BoxCircleObject {
 		Gdx.app.log(Game.LOG, "shooooot"+vectorMade);
 		double angle = Math.atan2(vectorMade.y, vectorMade.x);
 		body.setType(BodyType.DynamicBody);
-		vX = -(shotPower / 12.25f) * (float) Math.cos(angle);
-		vY = -(shotPower / 12.25f) * (float) Math.sin(angle);
+		vX = -(shotPower / 12f) * (float) Math.cos(angle);
+		vY = -(shotPower / 12f) * (float) Math.sin(angle);
 		body.setLinearVelocity(new Vector2(new Vector2(vX, vY)));
 		body.setAngularDamping(1.54f);
 		Gdx.app.log(Game.LOG, "vX:" + vX + " vY:" + vY);

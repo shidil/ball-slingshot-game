@@ -8,7 +8,7 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.mobezer.bmc.GlobalSettings;
 
 public class BoxObjectManager {
-	static World world=new World(new Vector2(0,-10), true);;
+	static World world=new World(new Vector2(0,-10.3f), true);;
 	public static final float BOX_TO_WORLD=100.0f;
 	public static final float WORLD_TO_BOX=0.01f;
 	

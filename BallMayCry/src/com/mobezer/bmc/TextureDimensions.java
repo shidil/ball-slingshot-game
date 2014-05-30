@@ -7,8 +7,8 @@ public class TextureDimensions {
 	public static final int BACK_WIDTH=640;
 	public static final int BACK_HEIGHT=360;
 	
-	public static final int BALL_WIDTH=38;
-	public static final int BALL_HEIGHT=38;
+	public static final int BALL_WIDTH=42;
+	public static final int BALL_HEIGHT=42;
 	
 	public static final int ORIGIN_WIDTH=14;
 	public static final int ORIGIN_HEIGHT=14;

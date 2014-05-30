@@ -6,6 +6,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
+import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 
 public class MainActivity extends AndroidApplication {
     @Override
@@ -18,7 +19,9 @@ public class MainActivity extends AndroidApplication {
  				WindowManager.LayoutParams.FLAG_FULLSCREEN);
  		getWindow().clearFlags(
  				WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+ 		AndroidApplicationConfiguration cfg =new AndroidApplicationConfiguration();
+ 		cfg.maxSimultaneousSounds=4;
  		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
- 		initialize(new Game(), true);
+ 		initialize(new Game(), cfg);
     }
 }

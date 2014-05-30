@@ -1,6 +1,7 @@
 package com.mobezer.bmc;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
@@ -24,5 +25,14 @@ public class TextWrapper{
                 Position.y-height/2 //Get center value in y direction
                 );
    }
+
+public float GetWidth() {
+	TextBounds bnd =fnt.getBounds(Text);
+	return bnd.width;
+}
+public float GetHeight() {
+	TextBounds bnd =fnt.getBounds(Text);
+	return bnd.width;
+}
 
 }
