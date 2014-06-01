@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.dom4j.Element;
-
 import aurelienribon.tweenengine.BaseTween;
 import aurelienribon.tweenengine.Timeline;
 import aurelienribon.tweenengine.Tween;
@@ -13,25 +11,21 @@ import aurelienribon.tweenengine.TweenCallback;
 import aurelienribon.tweenengine.equations.Quart;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
+import com.badlogic.gdx.utils.Json;
 import com.mobezer.bmc.objects.BoxObjectManager;
 import com.mobezer.bmc.objects.BoxRectObject;
-import com.mobezer.bmc.objects.Disc;
 import com.mobezer.bmc.objects.HeroBall;
 import com.mobezer.bmc.objects.Target;
 import com.mobezer.bmc.screens.GameScreen;
 import com.mobezer.tween.TextureAccessor;
-import com.mobezer.xml.Visitor;
-import com.mobezer.xml.XLoader;
 
 public class GameWorld {
 	// World constants
@@ -43,7 +37,7 @@ public class GameWorld {
 	public static OrthographicCamera camera; // camera to obtain projection
 												// matrix
 	// Physics
-	BoxObjectManager boxManager;
+	public static BoxObjectManager boxManager;
 	// public static BodyEditorLoader shapeLoader = new BodyEditorLoader(
 	// Gdx.files.internal("shapes/shapes.json"));
 
@@ -62,7 +56,7 @@ public class GameWorld {
 	// a list of points that define path of the heroBall
 	float stateTime;
 
-	public Vector2 circle;
+	public Vector2 circle=new Vector2();
 	private boolean hitTarget=false;
 
 	public GameWorld(OrthographicCamera cam) {
@@ -72,69 +66,22 @@ public class GameWorld {
 		createCollisionListener();
 		this.state = WORLD_STATE_RUNNING;
 		boxManager = new BoxObjectManager();
-		createLevel();
+		loadLevel();
 	}
 
-	private void createLevel() {
-		FileHandle inputHandle = Gdx.files
-				.internal("levels/level_"+GameScreen.level+".xml");
-		XLoader levelLoader = new XLoader(inputHandle.read());
-		levelLoader.registerVisitor(new Visitor() {
-
-			public void visit(Element element) {
-				String tag = element.getName();
-				if (tag.equals("sprite")) {
-					final float rotationAngle;
-					float pX = Float.parseFloat(element.attributeValue("x"));
-					float pY = Float.parseFloat(element.attributeValue("y"));
-					final float angle = Float.parseFloat(element.attributeValue("angle"));
-					float width = Float.parseFloat(element.attributeValue("width"));
-					float height = Float.parseFloat(element.attributeValue("height"));
-					if(element.attributeValue("rotation")!=null)
-						rotationAngle = Float.parseFloat(element.attributeValue("rotation"));
-					else
-						rotationAngle=0;
-					if (element.attributeValue("class").equals("box_object")) {
-						BoxRectObject box = new BoxRectObject(boxManager.GetNewObjectIndex(),
-								1, width, height, BodyType.StaticBody, 1, 0.05f, pX,
-								pY, angle, Assets.box){
-							@Override
-							public void rotate() {
-								setRotation(rotationAngle);
-							}
-						};
-						box.SetTextureDimension((int)width, (int)height);
-						boxManager.AddObject(box);
-					}
-					if (element.attributeValue("class").equals("disc_object")) {
-						Disc disc = new Disc(
-								boxManager.GetNewObjectIndex(), 1, width/2, BodyType.StaticBody, 0,
-								0.05f, pX, pY, angle, Assets.disc);
-						disc.SetTextureDimension((int)width, (int)width);
-						boxManager.AddObject(disc);
-					}
-					if (element.attributeValue("class").equals("hero_object")) {
-						heroOrigin = new Vector2(pX, pY);
-						circle = heroOrigin;
-						heroBall = new HeroBall(boxManager.GetNewObjectIndex(), 1, gRadius,
-								BodyType.KinematicBody, 1, 0.86f, pX, pY,angle, Assets.hero);
-						heroBall.SetTextureDimension(TextureDimensions.BALL_WIDTH,
-								TextureDimensions.BALL_HEIGHT);
-						boxManager.AddObject(heroBall);
-					}
-					if (element.attributeValue("class").equals("target_object")) {
-						target = new Target(boxManager.GetNewObjectIndex(), 1,TextureDimensions.TARGET_WIDTH / 2 - 9,
-								BodyType.KinematicBody,1, 0.86f, pX, pY, angle, Assets.ring);
-						target.SetTextureDimension(TextureDimensions.TARGET_WIDTH,
-								TextureDimensions.TARGET_HEIGHT);
-						boxManager.AddObject(target);
-					}
-				}
-
-			}
-		});
+	/** Loads level from json file */
+	private void loadLevel(){
+		Json json = new Json();
+		json.addClassTag("prototype", ObjctPrototype.class);
+		LevelFactory factory = json.fromJson(LevelFactory.class, 
+				Gdx.files.internal("levels/"+GameScreen.level+""));
+		factory.loadObjects(boxManager);
+		heroBall = (HeroBall) boxManager.bodies.get(0);
+		heroOrigin = heroBall.GetPosition();
+		circle.set(heroOrigin);
+		target = (Target) boxManager.bodies.get(1);
 	}
-
+	
 	public void update(float delta) {
 		if (state == WORLD_STATE_RUNNING) {
 			boxManager.Update(delta);

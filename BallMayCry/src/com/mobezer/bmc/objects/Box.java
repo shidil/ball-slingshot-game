@@ -6,14 +6,14 @@ import com.mobezer.bmc.Assets;
 import com.mobezer.bmc.Game;
 import com.mobezer.bmc.GameWorld;
 
-public class Disc extends BoxCircleObject {
+public class Box extends BoxRectObject {
 	float vX, vY;
 	public boolean noBody;
-	public Disc(float radius,  float px,float py, float angle) {
-		super(GameWorld.boxManager.GetNewObjectIndex(), 1, radius, BodyType.StaticBody, 0, 0.05f, px,
-				py, angle, Assets.disc);
-		SetTextureDimension((int)radius*2, (int)radius*2);
-		body.setUserData("disc");
+	public Box(float width,float height, float px,float py, float angle) {
+		super(GameWorld.boxManager.GetNewObjectIndex(), 1, width,height, BodyType.StaticBody, 1, 0.05f, px,
+				py, angle, Assets.box);
+		SetTextureDimension((int)width, (int)height);
+		body.setUserData("box");
 	}
 
 	public void victory() {

@@ -21,7 +21,7 @@ public class BoxRectObject extends BaseBoxObject{
 		MakeBody(width, height, 0, bodyType, density, restitution, pos, angle);
 		texture=new TextureWrapper(texRegion, pos);
 		texture1=new TextureWrapper(Assets.boxBg, pos);
-		body.setUserData("box");
+		//body.setUserData("box");
 	}
 
 	
