@@ -22,7 +22,7 @@
 *.tar
 *.zip
 *.rar
- 
+/bin 
 # Logs and databases #
 ######################
 *.log

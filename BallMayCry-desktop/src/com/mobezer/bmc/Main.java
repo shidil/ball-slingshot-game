@@ -5,7 +5,7 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
 public class Main {
-	static int hd=0;
+	static int hd=1;
 	public static void main(String[] args) {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.title = "Ball May Cry";
@@ -20,7 +20,7 @@ public class Main {
 			cfg.height = 480;
 		}
 		@SuppressWarnings("unused")
-		int level = Integer.parseInt(args[0]);
+		int level = 0;
 		new LwjglApplication(new Game(), cfg);
 	}
 }
